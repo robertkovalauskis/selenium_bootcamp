@@ -12,10 +12,12 @@ public class ChapterOnePage extends BaseFunc {
         super(driver);
     }
 
-   @FindBy(how = How.LINK_TEXT, using = "Chapter1")
-   private WebElement chapter1;
 
-    @FindBy(how = How.ID, using = "html5div")
+
+   @FindBy(how = How.LINK_TEXT, using = "Chapter1")
+   public WebElement chapter1;
+
+    //@FindBy(how = How.ID, using = "html5div")
     private WebElement textBox;
 
     @FindBy(how = How.XPATH, using = "//div[@class='mainbody']")
@@ -27,14 +29,21 @@ public class ChapterOnePage extends BaseFunc {
     @FindBy(how = How.CLASS_NAME, using = "mainheading")
     private WebElement mainheading;
 
-//    public void clickChapterOne() {
-//        chapter1.click();
-//    }
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
+
+  public void clickChapterOne() {
+       chapter1.click();
+   }
 
     public void setTextBox(String textToSend) {
-        //textBox.clear();
-        //textBox.sendKeys(textToSend);
+        textBox.clear();
+        textBox.sendKeys(textToSend);
     }
+
+    public String getTextOfTextBox() {
+        return textBox.getText();
+        }
 
     public void getTextOfWindowLink() {
         String textT= text.getText();
@@ -42,11 +51,17 @@ public class ChapterOnePage extends BaseFunc {
     }
 
     public void getAttributeOfVerifyButton() {
-//        String value = verifybutton.getAttribute("value");
+      String value = verifybutton.getAttribute("value");
     }
 
-    public void printCssValueguide() {
-
+    public String printCssValueguide() {
+        return "return null";
     }
+
+    public void selectFromSelectTypeDD(String optionName) {
+        selectByVisibleText(selectTypeDD, optionName);
+    }
+
+
 
 }

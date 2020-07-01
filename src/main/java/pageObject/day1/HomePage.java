@@ -13,7 +13,7 @@ public class HomePage extends BaseFunc {
     }
 
     @FindBy(how = How.LINK_TEXT, using = "Chapter1")
-    private WebElement chapter1;
+    public WebElement chapter1;
 
     @FindBy(how = How.ID, using = "html5div")
     private WebElement textBox;
@@ -22,6 +22,6 @@ public class HomePage extends BaseFunc {
     private WebElement text;
 
     public void clickChapterOne() {
-        //homePage.click();
+        chapter1.click();
     }
 }
