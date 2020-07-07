@@ -11,6 +11,7 @@ public class UploadPage extends BaseFunc {
     public UploadPage(WebDriver driver) {
         super(driver);
     }
+
     String path = System.getProperty("user.dir")+"\\src\\resources\\Test document uploading.docx";
 
     @FindBy(how = How.CSS, using = "[type='file']")

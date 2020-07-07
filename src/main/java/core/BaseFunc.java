@@ -51,5 +51,7 @@ public class BaseFunc {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-
+    public void waitPopUpAppear() {
+        wait = new WebDriverWait(driver, 10);
+    }
 }
